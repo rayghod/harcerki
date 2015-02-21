@@ -1,0 +1,27 @@
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @item.number %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag(@item.photo_url, :width => 600) if @item.photo.present? %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @item.price %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @item.user %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
