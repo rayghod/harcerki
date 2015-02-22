@@ -18,10 +18,14 @@ u2 = User.create({name: "Pracownik biura", email: "clerk@mail.com", password: "c
 u3 = User.create({name: "Koordynator", email: "koordynator@mail.com", password: "koordynator", password_confirmation: "koordynator", role_id: r3.id})
 u4 = User.create({name: "Klient", email: "klient@mail.com", password: "klient", password_confirmation: "klient", role_id: r4.id, street: "Litewska", housenumber: 39, apartmentnumber: 2, city: "Kraków", zipcode:"30-014"})
 
-
+Item.delete_all
 i1 = Item.create({name: "Rayban Sunglasses", number: "Stylish shades", price: 99.99})
 i2 = Item.create({name: "Gucci watch", number: "Expensive timepiece", price: 199.99})
 i3 = Item.create({name: "Henri Lloyd Pullover", number: "Classy knitwear", price: 299.99})
 i4 = Item.create({name: "Porsche socks", number: "Cosy footwear", price: 399.99})
 
-
+OrderStatus.delete_all
+OrderStatus.create! id: 1, name: "In Progress"
+OrderStatus.create! id: 2, name: "Placed"
+OrderStatus.create! id: 3, name: "Shipped"
+OrderStatus.create! id: 4, name: "Cancelled"

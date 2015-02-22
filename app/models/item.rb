@@ -1,4 +1,4 @@
 class Item < ActiveRecord::Base
 	mount_uploader :photo, PhotoUploader
-  belongs_to :user
+	has_many :order_items
 end
