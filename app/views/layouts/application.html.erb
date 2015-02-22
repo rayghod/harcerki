@@ -4,6 +4,8 @@
   <title>Harcerki</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+  <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -19,7 +21,9 @@
 	  <%= content_tag :div, msg, id: "flash_#{name}" %>
 	<% end %>
 
-<%= render 'layouts/cart_text' %>
+<div>
+    <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+</div>
 <%= yield %>
 
 </body>
