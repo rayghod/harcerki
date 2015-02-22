@@ -2,12 +2,12 @@
     </div>
 
       
+    <% if user_signed_in? %>
       <%= form_for order_item, remote: true do |f| %>
       
       <h4 class="text-right">Cena za sztukę: <%= item.price %>zł</h4>
         </tbody>
       </table>
-        <% if user_signed_in? %>
           <div class="input-group">
             <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
             <div class="input-group-btn">

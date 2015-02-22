@@ -8,14 +8,28 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 
+  # def current_order
+  #   if !session[:order_id].nil?
+  #     Order.find(session[:order_id])
+  #   else
+  #     Order.new
+  #   end
+  # end
+
   def current_order
-    if !session[:order_id].nil?
-      Order.find(session[:order_id])
+    if user_signed_in?
+      if (Order.find_by user_id:current_user.id).nil?
+        Order.new
+      elsif (Order.find_by iscart:0).nil?
+        Order.new
+      else
+        Order.find_by iscart:0
+      end
     else
-      Order.new
+
     end
   end
-  
+
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name

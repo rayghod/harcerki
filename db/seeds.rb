@@ -13,10 +13,10 @@ r3 = Role.create({name: "Koordynator", description: "Może kupić magazyny bez p
 r4 = Role.create({name: "Klient", description: "Może kupić magazyny", id: 4})
 
 User.delete_all
-u1 = User.create({name: "rayghod", email: "rayghod@mail.com", password: "aaaaaaaa", password_confirmation: "aaaaaaaa", role_id: 1})
-u2 = User.create({name: "Pracownik", email: "clerk@mail.com", password: "aaaaaaaa", password_confirmation: "aaaaaaaa", role_id: 2})
-u3 = User.create({name: "Koordynator", email: "koordynator@mail.com", password: "aaaaaaaa", password_confirmation: "aaaaaaaa", role_id: 3})
-u4 = User.create({name: "Klient", email: "klient@mail.com", password: "aaaaaaaa", password_confirmation: "aaaaaaaa", role_id: 4, street: "Litewska", housenumber: 39, apartmentnumber: 2, city: "Kraków", zipcode:"30-014"})
+u1 = User.create({name: "rayghod", email: "rayghod@mail.com", password: "aaaaaaaa", password_confirmation: "aaaaaaaa", role_id: 1, id: 1})
+u2 = User.create({name: "Pracownik", email: "clerk@mail.com", password: "aaaaaaaa", password_confirmation: "aaaaaaaa", role_id: 2, id: 2})
+u3 = User.create({name: "Koordynator", email: "koordynator@mail.com", password: "aaaaaaaa", password_confirmation: "aaaaaaaa", role_id: 3, id: 3})
+u4 = User.create({name: "Klient", email: "klient@mail.com", password: "aaaaaaaa", password_confirmation: "aaaaaaaa", role_id: 4, street: "Litewska", housenumber: 39, apartmentnumber: 2, city: "Kraków", zipcode:"30-014", id: 4})
 
 Item.delete_all
 i1 = Item.create({name: "Rayban Sunglasses", number: "Stylish shades", price: 99.99})
@@ -30,4 +30,3 @@ OrderStatus.create! id: 2, name: "Koordynator"
 OrderStatus.create! id: 3, name: "Wysłane"
 OrderStatus.create! id: 4, name: "Zakończone"
 
-Order.delete_all
