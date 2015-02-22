@@ -13,7 +13,7 @@
               <%= f.submit "Zmień ilość"%>
               <%= link_to "Usuń", order_item, { data: { confirm: "Jesteś pewien, że chcesz usunąć '#{order_item.item.name}' z koszyka?" }, method: :delete, remote: true, } %>
 
-
+        
         <p>Suma: <%= order_item.total_price %>zł</p>
       <% end %>
 

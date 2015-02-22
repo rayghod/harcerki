@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get 'order_items/create'
   get 'order_items/update'
   get 'order_items/destroy'
+  get 'order_items/finish'
   get 'carts/show'
+  get 'carts/checkout'
 
   devise_for :users
   
@@ -18,4 +20,6 @@ Rails.application.routes.draw do
   resources :products, only: [:index]
   resources :order_items, only: [:create, :update, :destroy]
   resource :cart, only: [:show]
+
+
 end

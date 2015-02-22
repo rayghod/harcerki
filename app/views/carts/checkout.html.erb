@@ -1,0 +1,10 @@
+<p>Zamówienie zostanie dostarczone na poniższy adres (jeśli chcesz zmienć adres, dostawy, edytuj swój profil):
+<p>ul. <%= current_user.street%> <%= current_user.housenumber%>
+	<% if !current_user.apartmentnumber.nil?%>
+	/<%= current_user.apartmentnumber%>
+	<% end %>
+<p><%= current_user.zipcode %> <%= current_user.city%>
+
+<p>Całkowity koszt zamówienia: <%= Order.find_by(iscart: 0, user_id: current_user.id).subtotal%> zł
+
+<p><%= link_to "Potwierdź poprawność danych", order_items_finish_path%>

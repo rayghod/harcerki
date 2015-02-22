@@ -30,3 +30,4 @@ OrderStatus.create! id: 2, name: "Koordynator"
 OrderStatus.create! id: 3, name: "Wysłane"
 OrderStatus.create! id: 4, name: "Zakończone"
 
+Order.delete_all

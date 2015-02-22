@@ -20,10 +20,10 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       if (Order.find_by user_id:current_user.id).nil?
         Order.new
-      elsif (Order.find_by iscart:0).nil?
+      elsif Order.find_by(iscart: 0, user_id: current_user.id).nil?
         Order.new
       else
-        Order.find_by iscart:0
+        Order.find_by(iscart: 0, user_id: current_user.id)
       end
     else
 
