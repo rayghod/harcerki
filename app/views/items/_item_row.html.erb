@@ -1,14 +1,19 @@
-<h4><%= item.name %></small></h4>
+<td><%= item.name %></small></td>
     </div>
-    <div class="col-xs-4">
+
       
       <%= form_for order_item, remote: true do |f| %>
-      <h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency item.price %></span></h4>
-        <div class="input-group">
-          <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
-          <div class="input-group-btn">
-            <%= f.hidden_field :item_id, value: item.id %>
-            <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+      
+      <h4 class="text-right">Cena za sztukę: <%= item.price %>zł</h4>
+        </tbody>
+      </table>
+        <% if user_signed_in? %>
+          <div class="input-group">
+            <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+            <div class="input-group-btn">
+              <%= f.hidden_field :item_id, value: item.id %>
+              <%= f.submit "Dodaj do koszyka", class: "btn btn-primary" %>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>

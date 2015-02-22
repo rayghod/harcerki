@@ -1,20 +1,20 @@
 <p>
-  <strong>Name:</strong>
+  <strong>Nazwa:</strong>
   <%= @item.name %>
 </p>
 
 <p>
-  <strong>Number:</strong>
+  <strong>Numer:</strong>
   <%= @item.number %>
 </p>
 
 <p>
-  <strong>Photo:</strong>
-  <%= image_tag(@item.photo_url, :width => 600) if @item.photo.present? %>
+  <strong>Zdjęcie:</strong>
+  <%= image_tag(@item.photo_url, :width => 300) if @item.photo.present? %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>Cena:</strong>
   <%= @item.price %>
 </p>
 

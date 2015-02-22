@@ -1,21 +1,22 @@
 <h1>Listing Items</h1>
 
+  <table>
+    <thead>
+      <tr>
+        <th>Nazwa</th>
+        <th>Numer</th>
+        <th>Cena</th>
+        <th>Okładka</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-<% @item.each do |item| %>
-      <%= render "item_row", item: item, order_item: @order_item %>
-    <% end %>
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Number</th>
-      <th>Price</th>
-      <th>Photo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+    <tbody>
+      <% @item.each do |item| %>
+        <%= render "item_row", item: item, order_item: @order_item %>
+      <% end %>
+    
+<!--
     <% @items.each do |item| %>
       <tr>
         <td><%= item.name %></td>
@@ -35,8 +36,7 @@
         </td>
       </tr>
     <% end %>
-  </tbody>
-</table> -->
+ -->
 
 <br>
 
