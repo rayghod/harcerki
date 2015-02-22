@@ -1,0 +1,47 @@
+
+<% if @client_orders.size == 0 %>
+  <p class="text-center">
+    Nie ma żadnych zamówień. <%= link_to "Wróć", root_path %> i dodaj coś.
+  </p>
+<% else %>
+  <% @client_orders.each do |client_order| %>
+      <p> <%= OrderStatus.all.find_by(id: client_order.order_status_id).name %>
+        <td><%= link_to 'Show', client_order %></td>
+        <td><%= link_to 'Edit', edit_client_order_path(client_order) %></td>
+        <td><%= link_to 'Destroy', client_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      
+  <% end %>
+
+
+<% end %>
+
+
+
+
+
+<!-- <p id="notice"><%= notice %></p>
+
+<h1>Listing Client Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @client_orders.each do |client_order| %>
+      <tr>
+        <td><%= link_to 'Show', client_order %></td>
+        <td><%= link_to 'Edit', edit_client_order_path(client_order) %></td>
+        <td><%= link_to 'Destroy', client_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Client order', new_client_order_path %>
+ -->

@@ -9,12 +9,6 @@ class Ability
     elsif user.coordinator?
         can :read, Item
         can :create, Item
-        can :update, Item do |item|
-            item.try(:user) == user
-        end
-        can :destroy, Item do |item|
-            item.try(:user) == user
-        end
     elsif user.client?
         can :read, Item
     else

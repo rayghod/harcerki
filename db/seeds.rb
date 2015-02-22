@@ -26,8 +26,7 @@ i4 = Item.create({name: "Porsche socks", number: "Cosy footwear", price: 399.99}
 
 OrderStatus.delete_all
 OrderStatus.create! id: 1, name: "W trakcie"
-OrderStatus.create! id: 2, name: "Koordynator"
-OrderStatus.create! id: 3, name: "Wysłane"
-OrderStatus.create! id: 4, name: "Zakończone"
+OrderStatus.create! id: 2, name: "Wysłane"
+OrderStatus.create! id: 3, name: "Wysłane i zapłacone"
 
 Order.delete_all
