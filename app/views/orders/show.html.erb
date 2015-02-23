@@ -7,15 +7,18 @@
     	<tr>
     		<td><%= order_item.quantity%> x</td> 
     		<td><%= Item.find_by(id: order_item.item_id).name %></td>
+    		<td><%= Item.find_by(id: order_item.item_id).price * order_item.quantity%> zł</td>
     	</tr>
  	<% end %>
 </table>
 <p>	Suma: <%= @order.subtotal %> zł
-<p>	Koordynator: 
-	<% if Role.find_by(id: @user.role_id).name == "Koordynator"%>
-		Tak
-	<% else %>
-		Nie
-	<% end %>
+<% if can? :show, Order %>
+	<p>	Koordynator: 
+		<% if Role.find_by(id: @user.role_id).name == "Koordynator"%>
+			Tak
+		<% else %>
+			Nie
+		<% end %>
+<% end %>
 <p> Status: <%= @status.find_by(id: @order.order_status_id).name%>
 
