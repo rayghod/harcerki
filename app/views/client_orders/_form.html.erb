@@ -11,6 +11,9 @@
     </div>
   <% end %>
 
+  <%= collection_select(:order, :order_status_id, OrderStatus.all, :id, :name, {prompt: true}) %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

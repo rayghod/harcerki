@@ -1,0 +1,21 @@
+<table>
+	<tr><td><%=@user.name %></td></tr>
+	<tr><td><%=@user.street %></td></tr>
+	<tr><td><%=@user.zipcode %></td></tr>
+	<tr><td><%=@user.city %></td></tr>
+	<% @order_items.each do |order_item| %>
+    	<tr>
+    		<td><%= order_item.quantity%> x</td> 
+    		<td><%= Item.find_by(id: order_item.item_id).name %></td>
+    	</tr>
+ 	<% end %>
+</table>
+<p>	Suma: <%= @order.subtotal %> zł
+<p>	Koordynator: 
+	<% if Role.find_by(id: @user.role_id).name == "Koordynator"%>
+		Tak
+	<% else %>
+		Nie
+	<% end %>
+<p> Status: <%= @status.find_by(id: @order.order_status_id).name%>
+

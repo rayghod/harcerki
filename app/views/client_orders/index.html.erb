@@ -5,10 +5,10 @@
   </p>
 <% else %>
   <% @client_orders.each do |client_order| %>
-      <p> <%= OrderStatus.all.find_by(id: client_order.order_status_id).name %>
-        <td><%= link_to 'Show', client_order %></td>
-        <td><%= link_to 'Edit', edit_client_order_path(client_order) %></td>
-        <td><%= link_to 'Destroy', client_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <p> Id: <%= client_order.id %>
+      <%= OrderStatus.all.find_by(id: client_order.order_status_id).name %>
+        <td><%= link_to 'Szczegóły', client_order %></td>
+        <td><%= link_to 'Edytuj status', edit_client_order_path(client_order) %></td>
       
   <% end %>
 

@@ -6,10 +6,12 @@ class Ability
 
     if user.admin?
         can :manage, :all
-    elsif user.coordinator?
+    elsif user.koordynator?
         can :read, Item
         can :create, Item
-    elsif user.client?
+    elsif user.pracownik?
+      can :manage, Order, ClientOrder
+    elsif user.klient?
         can :read, Item
     else
         can :read, Item
