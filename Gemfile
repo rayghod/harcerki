@@ -46,3 +46,6 @@ gem 'devise'
 
 gem 'cancancan', '~> 1.10'
 gem 'carrierwave'
+gem 'bootstrap-sass', '~> 3.3.3'
+
+gem 'autoprefixer-rails'

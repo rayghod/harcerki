@@ -5,7 +5,7 @@
 <% else %>
 
 <% @finished_orders.each do |finished_order| %>
- 	<p><%= @status.find_by(id: finished_order.order_status_id).name%> <%= finished_order.subtotal%> zł
+ 	<p><%= @status.find_by(id: finished_order.order_status_id).name%> <%= finished_order.subtotal.round(2)%> zł
  		<td><%= link_to 'Szczegóły', finished_order %></td>
  <% end %> 
 <% end %>

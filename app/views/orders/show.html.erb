@@ -11,7 +11,7 @@
     	</tr>
  	<% end %>
 </table>
-<p>	Suma: <%= @order.subtotal %> zł
+<p>	Suma: <%= @order.subtotal.round(2) %> zł
 <% if can? :show, Order %>
 	<p>	Koordynator: 
 		<% if Role.find_by(id: @user.role_id).name == "Koordynator"%>

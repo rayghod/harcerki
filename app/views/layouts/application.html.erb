@@ -10,11 +10,19 @@
 </head>
 <body>
 	<% if user_signed_in? %>
-	  Signed in as <%= current_user.email %>. Not you?
-	  <%= link_to "Edit profile", edit_user_registration_path %>
-	  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+	<div class="row">
+		<div class="col-md-8">
+			<h3><%= link_to "Krajka sklep", root_path %></h3>
+		</div>
+		<div class="col-md-4">
+	  		Zalogowano jako <%= current_user.email %>.
+	  		<%= link_to "Edytuj profil", edit_user_registration_path %>
+	  		<%= link_to "Wyloguj się", destroy_user_session_path, :method => :delete %>
+	  		<div class="cart-text"><%= render 'layouts/cart_text' %></div>
+	  	</div>
+	</div>
 	<% else %>
-	  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+	  <%= link_to "Zarejestruj się", new_user_registration_path %> lub <%= link_to "Zaloguj się", new_user_session_path %>
 	<% end %>
 	 
 	<% flash.each do |name, msg| %>
@@ -22,7 +30,7 @@
 	<% end %>
 
 	<% if user_signed_in? %>
- 	  <div class="cart-text"><%= render 'layouts/cart_text' %></div>
+
  	<% end %>
 <%= yield %>
 

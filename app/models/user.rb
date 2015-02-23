@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
   belongs_to :role
   has_many :magazines
 
-  validates_presence_of :name
   before_save :assign_role
 
   def assign_role
