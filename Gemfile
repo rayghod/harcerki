@@ -43,9 +43,14 @@ group :development, :test do
   gem 'spring'
 end
 gem 'devise'
+gem 'ratyrate', github: 'wazery/ratyrate'
+gem 'rails-jquery-autocomplete'
+
 
 gem 'cancancan', '~> 1.10'
 gem 'carrierwave'
 gem 'bootstrap-sass', '~> 3.3.3'
 
-gem 'autoprefixer-rails'
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
+gem 'jquery-turbolinks'

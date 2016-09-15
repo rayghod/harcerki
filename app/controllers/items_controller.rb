@@ -1,14 +1,13 @@
 class ItemsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
+  autocomplete :item, :name, :full => true
   load_and_authorize_resource
 
   # GET /items
   # GET /items.json
   def index
-    @item = Item.all
-    if user_signed_in?
-      @order_item = current_order.order_items.new 
-    end
+    @item = Item.all.paginate(page: params[:page], per_page: 5)
+
   end
 
   # GET /items/1

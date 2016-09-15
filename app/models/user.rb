@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  ratyrate_rater
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :role
@@ -26,6 +27,10 @@ class User < ActiveRecord::Base
 
   def pracownik?
     self.role && self.role.name == "pracownik"
+  end
+
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%") 
   end
 
 end

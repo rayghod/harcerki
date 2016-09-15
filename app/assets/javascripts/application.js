@@ -12,7 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
+//= require autocomplete-rails
+
 //= require_tree .
 //= require bootstrap-sprockets
 //= require_tree .
+//= require jquery.raty
+//= require ratyrate
+// require turbolinks
